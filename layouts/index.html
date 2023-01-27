@@ -10,7 +10,7 @@
                     <div class="text-center">
                         {{ with site.Data.homepage.main }}
                         <h1 class="mx-auto my-0 text-uppercase">{{ .header.title }}</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">{{ .header.description }}</h2>
+                        <h2 class="text-white mx-auto mt-2 mb-5">{{ .header.description }}</h2>
                         <a class="btn btn-primary" href="{{ .header.button.url }}">{{ .header.button.text }}</a>
                         {{ end }}
                     </div>
@@ -18,13 +18,31 @@
             </div>
         </header>
         <!-- About-->
-        {{ with site.Data.homepage.about }}
-        <section class="about-section text-center" id="about">
+        {{ with site.Data.homepage.preorder }}
+        <section class="about-section text-center" id="preorder">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
                         <h2 class="text-white mb-4">{{ .title }}</h2>
-                        <p class="text-white-50">{{ .desc }}</p>
+                        <p class="text-white">
+                        Remastered and available on vinyl for the first time
+                        </p>
+                        <p class="text-white">
+                        Includes 13 track bonus LP featuring 8 previously unreleased demo recordings
+                        </p>
+                        <p class="text-white">
+                        52 page book featuring extensive liner notes, forwarded and track by track by Joe Pernice, previously unseen photographs, and more
+                        </p>
+                        <p class="text-white">
+                        Lyrics printed for the first time
+                        </p>
+                        <p class="text-white">
+                        Pressed on orange & white splatter vinyl
+                        </p>
+                        <p class="text-white">
+                        Includes 5x7 print autographed by Joe Pernice
+                        </p>
+                        <h2 class="text-white">Out May 19th</h2>
                         {{ if .button.enable }}
                         <a class="btn btn-primary about-btn" href="{{ .button.url }}">{{ .button.text }}</a>
                         {{ end }}
@@ -38,41 +56,43 @@
         {{ with site.Data.homepage.projects }}
         <section class="projects-section bg-light" id="projects">
             <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{{ .card1.img }}" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>{{ .card1.title }}</h4>
-                            <p class="text-black-50 mb-0">{{ .card1.text }}</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project One Row-->
                 <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                    <div class="col-lg-6"><img class="img-fluid" src="{{ .card2.img }}" alt="..." /></div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6"><img class="img-fluid" src="{{ .card1.img }}" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-left">
-                                    <h4 class="text-white">{{ .card2.title }}</h4>
-                                    <p class="mb-0 text-white-50">{{ .card2.text }}</p>
-                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <p class="mb-0 text-white-50">{{ .card1.text }}</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                    <h4 class="text-white">{{ .card1.title }}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Project Two Row-->
-                <div class="row gx-0 justify-content-center">
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="{{ .card2.img }}" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <p class="mb-0 text-white-50">{{ .card2.text }}</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                    <h4 class="text-white">{{ .card2.title }}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                     <div class="col-lg-6"><img class="img-fluid" src="{{ .card3.img }}" alt="..." /></div>
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
                                 <div class="project-text w-100 my-auto text-center text-lg-right">
-                                    <h4 class="text-white">{{ .card3.title }}</h4>
                                     <p class="mb-0 text-white-50">{{ .card3.text }}</p>
                                     <hr class="d-none d-lg-block mb-0 me-0" />
+                                    <a href="{{ .card3.link }}"><h4 class="text-white">{{ .card3.title }}</h4></a>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +101,20 @@
             </div>
         </section>
         {{ end }}
+
+        <section class="tour-section" id="tour">
+            <div class="container px-6 px-lg-6">
+                <div class="row gx-6 gx-lg-6">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="fa fa-calendar fa-2x mb-2 text-white" aria-hiden="true"></i>
+                        <h2 class="text-white mb-5">Tour</h2>
+                        <h5><em>Performing the album in its entirety:</em></h5>
+                        <p>Thursday, May 18th, Somervilla, MA <br />Crystal Ballroom</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Signup-->
         <section class="signup-section" id="signup">
             <div class="container px-4 px-lg-5">
@@ -109,42 +143,11 @@
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Address</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">{{ site.Params.address }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="#!">{{ site.Params.email }}</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Phone</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">{{ site.Params.phone }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="{{ site.Params.twitter }}"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="{{ site.Params.instagram }}"><i class="fab fa-instagram"></i></a>
                     <a class="mx-2" href="{{ site.Params.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="{{ site.Params.github }}"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="{{ site.Params.substack }}"><i class="fa fa-book" aria-hidden="true"></i></a>
+                    <a class="mx-2" href="{{ site.Params.bandcamp }}"><i class="fab fa-bandcamp" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
